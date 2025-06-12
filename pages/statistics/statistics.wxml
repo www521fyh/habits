@@ -14,8 +14,9 @@
     </view>
   </view>
 
+  <text class="section-title">统计详情</text>
+  
   <view class="stats-details">
-    <text class="section-title">统计详情</text>
     <view class="habit-stats" wx:for="{{habits}}" wx:key="id">
       <view class="habit-header">
         <image class="habit-icon" src="{{item.icon}}" mode="aspectFit"></image>

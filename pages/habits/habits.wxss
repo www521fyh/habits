@@ -2,6 +2,13 @@
   padding: 20rpx;
   background-color: #F8F7FF;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+page {
+  background-color: #F8F7FF;
 }
 
 .header {
@@ -9,14 +16,29 @@
   padding: 30rpx;
   border-radius: 20rpx;
   color: white;
-  margin-bottom: 30rpx;
+  margin-bottom: 20rpx;
+  width: 600rpx;
+  display: flex;
+  flex-direction: column;
 }
 
-.date {
+.header-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  text-align: left;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-info {
   margin-bottom: 20rpx;
 }
 
-.day {
+.date {
   font-size: 48rpx;
   font-weight: bold;
   margin-right: 20rpx;
@@ -26,13 +48,14 @@
   font-size: 32rpx;
 }
 
-.progress {
+.progress-text {
   font-size: 28rpx;
   opacity: 0.9;
 }
 
 .habits-list {
-  margin-top: 30rpx;
+  margin-top: 0;
+  height: 1500rpx;
 }
 
 .habit-item {
@@ -43,11 +66,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 600rpx;
 }
 
 .habit-content {
   display: flex;
   align-items: center;
+  flex: 1;
 }
 
 .habit-icon {
@@ -57,24 +82,34 @@
 }
 
 .habit-info {
-  display: flex;
-  flex-direction: column;
+  flex: 1;
 }
 
 .habit-name {
   font-size: 32rpx;
-  font-weight: 500;
-  margin-bottom: 10rpx;
+  margin-bottom: 12rpx;
+  color: #333;
 }
 
-.habit-frequency {
+.frequency-info {
+  display: flex;
+  gap: 16rpx;
+}
+
+.frequency-tag, .progress-tag {
   font-size: 24rpx;
-  color: #999;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
 }
 
-.progress-text {
-  margin-left: 20rpx;
+.frequency-tag {
+  background-color: #F0F0FF;
   color: #7B66FF;
+}
+
+.progress-tag {
+  background-color: #FFF0F0;
+  color: #FF6B6B;
 }
 
 .checkbox {
@@ -85,6 +120,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 20rpx;
 }
 
 .checkbox.checked {
@@ -98,7 +134,7 @@
   width: 100rpx;
   height: 100rpx;
   background: #7B66FF;
-  border-radius: 50%;
+  border-radius: 20rpx;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -2,11 +2,20 @@
   padding: 20rpx;
   background-color: #F8F7FF;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+page {
+  background-color: #F8F7FF;
 }
 
 .stats-overview {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20rpx;
+  width: 600rpx;
   margin-bottom: 40rpx;
 }
 
@@ -14,7 +23,7 @@
   background: linear-gradient(135deg, #7B66FF, #9785FF);
   padding: 30rpx;
   border-radius: 16rpx;
-  width: 30%;
+  width: calc((500rpx - 40rpx) / 3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,17 +41,21 @@
   opacity: 0.9;
 }
 
+.section-title {
+  font-size: 30rpx;
+  font-weight:bold;
+  color: #7B66FF;
+  margin-bottom: 20rpx;
+  align-self: flex-start;
+  padding-left: 60rpx;
+}
+
 .stats-details {
   background: white;
   border-radius: 16rpx;
   padding: 30rpx;
-}
-
-.section-title {
-  font-size: 32rpx;
-  font-weight: bold;
-  margin-bottom: 30rpx;
-  color: #333;
+  height: 1500rpx;
+  width: 600rpx;
 }
 
 .habit-stats {

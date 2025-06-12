@@ -5,11 +5,15 @@
 
   <view class="habit-list">
     <view class="habit-item" wx:for="{{habitTemplates}}" wx:key="id">
-      <view class="habit-info">
-        <image class="habit-icon" src="{{item.icon}}" mode="aspectFit"></image>
-        <text class="habit-name">{{item.name}}</text>
+      <view class="habit-content">
+        <image class="habit-icon" src="/{{item.icon}}" mode="aspectFit"></image>
+        <view class="habit-info">
+          <text class="habit-name">{{item.name}}</text>
+          <view class="frequency-info">
+            <view class="frequency-tag">{{item.frequency}}</view>
+          </view>
+        </view>
       </view>
-      <view class="frequency">{{item.frequency}}</view>
       <view class="add-btn {{item.added ? 'added' : ''}}" bindtap="toggleHabit" data-id="{{item.id}}">
         <text>{{item.added ? '✓' : '+'}}</text>
       </view>

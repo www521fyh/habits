@@ -1,31 +1,44 @@
 <view class="container">
   <!-- 顶部日期和进度 -->
   <view class="header">
-    <view class="date">
-      <text class="day">{{currentDate}}</text>
-      <text class="weekday">{{weekday}}</text>
+    <view class="header-content">
+      <view class="date-info">
+        <text class="date">{{currentDate}}</text>
+        <text class="weekday">{{weekday}}</text>
+      </view>
+      <text class="progress-text">已完成 {{completedCount}}/{{totalCount}} 个习惯</text>
     </view>
-    <view class="progress">已完成 {{completedCount}}/{{totalCount}} 个习惯</view>
   </view>
 
   <!-- 习惯列表 -->
-  <view class="habits-list">
-    <view class="habit-item" wx:for="{{habits}}" wx:key="id">
-      <view class="habit-content">
-        <image class="habit-icon" src="{{item.icon}}" mode="aspectFit"></image>
-        <view class="habit-info">
-          <text class="habit-name">{{item.name}}</text>
-          <view class="habit-frequency">
-            <text>{{item.frequency}}</text>
-            <text class="progress-text">本周{{item.weekProgress}}</text>
+  <block wx:if="{{habits.length > 0}}">
+    <view class="habits-list">
+      <view class="habit-item" wx:for="{{habits}}" wx:key="id">
+        <view class="habit-content">
+          <image class="habit-icon" src="{{item.icon}}" mode="aspectFit"></image>
+          <view class="habit-info">
+            <text class="habit-name">{{item.name}}</text>
+            <view class="frequency-info">
+              <view class="frequency-tag">{{item.frequency}}</view>
+              <view class="progress-tag">本周{{item.weekProgress}}</view>
+            </view>
           </view>
         </view>
-      </view>
-      <view class="checkbox {{item.completed ? 'checked' : ''}}" bindtap="toggleHabit" data-id="{{item.id}}">
-        <icon wx:if="{{item.completed}}" type="success" size="20" color="#7B66FF"/>
+        <view class="checkbox {{item.completed ? 'checked' : ''}}" bindtap="toggleHabit" data-id="{{item.id}}">
+          <icon wx:if="{{item.completed}}" type="success" size="20" color="#7B66FF"/>
+        </view>
       </view>
     </view>
-  </view>
+  </block>
+
+  <!-- 空状态显示 -->
+  <block wx:else>
+    <view class="empty-state">
+      <image class="empty-icon" src="images/empty.png" mode="aspectFit"></image>
+      <text class="empty-title">还没有添加习惯哦</text>
+      <text class="empty-desc">点击下方按钮开始养成好习惯吧！</text>
+    </view>
+  </block>
 
   <!-- 添加习惯按钮 -->
   <view class="add-button" bindtap="openDialog">

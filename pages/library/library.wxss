@@ -2,10 +2,19 @@
   padding: 20rpx;
   background-color: #F8F7FF;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+page {
+  background-color: #F8F7FF;
 }
 
 .header {
   padding: 30rpx 0;
+  display: flex;
+  width: 600rpx;
 }
 
 .title {
@@ -16,6 +25,8 @@
 
 .habit-list {
   margin-top: 20rpx;
+  width: 600rpx;
+  height: 1500rpx;
 }
 
 .habit-item {
@@ -26,34 +37,48 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100rpx;
 }
 
-.habit-info {
+.habit-content {
   display: flex;
   align-items: center;
   flex: 1;
 }
 
 .habit-icon {
-  width: 60rpx;
-  height: 60rpx;
+  width: 80rpx;
+  height: 80rpx;
   margin-right: 20rpx;
+}
+
+.habit-info {
+  flex: 1;
 }
 
 .habit-name {
   font-size: 32rpx;
+  margin-bottom: 12rpx;
+  color: #333;
 }
 
-.frequency {
+.frequency-info {
+  display: flex;
+  gap: 16rpx;
+}
+
+.frequency-tag {
   font-size: 24rpx;
-  color: #999;
-  margin-right: 20rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+  background-color: #F0F0FF;
+  color: #7B66FF;
 }
 
 .add-btn {
-  width: 60rpx;
-  height: 60rpx;
-  border-radius: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
   background: #7B66FF;
   display: flex;
   align-items: center;

@@ -52,9 +52,9 @@ Page({
 
     toggleHabit: function (e) {
         const habitId = e.currentTarget.dataset.id;
-        const habits = this.data.habits.map(habit => {
+        const habits = wx.getStorageSync('habits') || [];
+        const updatedHabits = habits.map(habit => {
             if (habit.id === habitId) {
-                // 更新完成状态和进度
                 const isCompleted = !habit.completed;
                 const [current, total] = habit.weekProgress.split('/').map(Number);
                 const newCurrent = isCompleted ? current + 1 : current - 1;
@@ -68,7 +68,7 @@ Page({
             return habit;
         });
 
-        wx.setStorageSync('habits', habits);
+        wx.setStorageSync('habits', updatedHabits);
         this.loadHabits();
     },
 
@@ -121,20 +121,17 @@ Page({
         const newHabit = {
             id: Date.now(),
             name: this.data.newHabitName,
-            icon: '/images/default.png',
+            icon: 'images/default.png',
             frequency: this.data.frequency === '每天' ? '每天' : `每周${this.data.selectedTimes}次`,
             completed: false,
-            // 初始进度为0，总次数根据频率设置
             weekProgress: `0/${this.data.frequency === '每天' ? 7 : this.data.selectedTimes}`,
             added: true,
-            // 添加打卡记录数组，用于记录每次打卡的时间
             checkInRecords: [],
-            // 添加本周开始时间，用于重置周进度
             weekStartDate: this.getWeekStartDate()
         };
 
-        // 将新习惯添加到数组开头
-        wx.setStorageSync('habits', [newHabit, ...habits]);
+        // 将新习惯添加到数组末尾
+        wx.setStorageSync('habits', [...habits, newHabit]);
         this.loadHabits();
         this.closeDialog();
 

@@ -4,35 +4,35 @@ Page({
             {
                 id: 1,
                 name: '每天喝水2000ml',
-                icon: '/pages/images/water.png',
+                icon: 'images/water.png',
                 frequency: '每天',
                 added: false
             },
             {
                 id: 2,
                 name: '跑步20分钟',
-                icon: '/pages/images/running.png',
+                icon: 'images/running.png',
                 frequency: '每周3次',
                 added: false
             },
             {
                 id: 3,
                 name: '阅读20分钟',
-                icon: '/pages/images/reading.png',
+                icon: 'images/reading.png',
                 frequency: '每天',
                 added: false
             },
             {
                 id: 4,
                 name: '晚上11点前睡觉',
-                icon: '/pages/images/sleep.png',
+                icon: 'images/sleep.png',
                 frequency: '每天',
                 added: false
             },
             {
                 id: 5,
                 name: '吃一个水果',
-                icon: '/pages/images/fruit.png',
+                icon: 'images/fruit.png',
                 frequency: '每天',
                 added: false
             }
@@ -40,8 +40,14 @@ Page({
     },
 
     onShow: function () {
-        this.checkAndResetWeekProgress();
         this.checkAddedHabits();
+
+        // 更新tabBar选中状态
+        if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+            this.getTabBar().setData({
+                selected: 1
+            });
+        }
     },
 
     checkAddedHabits: function () {
@@ -66,11 +72,17 @@ Page({
         } else {
             // Add habit
             const newHabit = {
-                ...habitTemplate,
+                id: habitTemplate.id,
+                name: habitTemplate.name,
+                icon: habitTemplate.icon,
+                frequency: habitTemplate.frequency,
                 completed: false,
                 weekProgress: habitTemplate.frequency === '每天' ? '0/7' : '0/3',
-                added: true
+                added: true,
+                checkInRecords: [],
+                weekStartDate: new Date().setHours(0, 0, 0, 0)
             };
+            // 将新习惯添加到数组末尾
             wx.setStorageSync('habits', [...userHabits, newHabit]);
         }
 
