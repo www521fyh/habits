@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/habits/habits",
+    "pages/library/library",
+    "pages/statistics/statistics"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "习惯小记",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#7B66FF",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/habits/habits",
+        "text": "我的习惯",
+        "iconPath": "images/habit.png",
+        "selectedIconPath": "images/habit.png"
+      },
+      {
+        "pagePath": "pages/library/library",
+        "text": "习惯库",
+        "iconPath": "images/library.png",
+        "selectedIconPath": "images/library.png"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "text": "统计",
+        "iconPath": "images/stats.png",
+        "selectedIconPath": "images/stats.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

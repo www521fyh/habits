@@ -1,0 +1,71 @@
+<view class="container">
+  <!-- 顶部日期和进度 -->
+  <view class="header">
+    <view class="date">
+      <text class="day">{{currentDate}}</text>
+      <text class="weekday">{{weekday}}</text>
+    </view>
+    <view class="progress">已完成 {{completedCount}}/{{totalCount}} 个习惯</view>
+  </view>
+
+  <!-- 习惯列表 -->
+  <view class="habits-list">
+    <view class="habit-item" wx:for="{{habits}}" wx:key="id">
+      <view class="habit-content">
+        <image class="habit-icon" src="{{item.icon}}" mode="aspectFit"></image>
+        <view class="habit-info">
+          <text class="habit-name">{{item.name}}</text>
+          <view class="habit-frequency">
+            <text>{{item.frequency}}</text>
+            <text class="progress-text">本周{{item.weekProgress}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="checkbox {{item.completed ? 'checked' : ''}}" bindtap="toggleHabit" data-id="{{item.id}}">
+        <icon wx:if="{{item.completed}}" type="success" size="20" color="#7B66FF"/>
+      </view>
+    </view>
+  </view>
+
+  <!-- 添加习惯按钮 -->
+  <view class="add-button" bindtap="openDialog">
+    <text>+</text>
+  </view>
+
+  <!-- 新增习惯对话框 -->
+  <view class="dialog-mask" wx:if="{{showDialog}}" bindtap="closeDialog">
+    <view class="dialog-content" catchtap="stopPropagation">
+      <view class="dialog-header">
+        <text class="dialog-title">新增习惯</text>
+        <text class="dialog-close" bindtap="closeDialog">×</text>
+      </view>
+      
+      <view class="dialog-body">
+        <input class="habit-input" placeholder="请输入习惯名称" model:value="{{newHabitName}}" />
+        
+        <view class="frequency-section">
+          <text class="section-label">频率</text>
+          <view class="frequency-options">
+            <view class="frequency-btn {{frequency === '每天' ? 'active' : ''}}" 
+                  bindtap="selectFrequency" data-freq="每天">每天</view>
+            <view class="frequency-btn {{frequency === '每周' ? 'active' : ''}}" 
+                  bindtap="selectFrequency" data-freq="每周">每周</view>
+          </view>
+          
+          <view class="times-selector" wx:if="{{frequency === '每周'}}">
+            <view class="time-btn {{selectedTimes === index + 1 ? 'active' : ''}}" 
+                  wx:for="{{6}}" wx:key="index"
+                  bindtap="selectTimes" data-times="{{index + 1}}">
+              {{index + 1}}
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <view class="dialog-footer">
+        <button class="btn-cancel" bindtap="closeDialog">取消</button>
+        <button class="btn-confirm" bindtap="confirmAddHabit">确定</button>
+      </view>
+    </view>
+  </view>
+</view> 

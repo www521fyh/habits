@@ -1,0 +1,27 @@
+<view class="tab-bar">
+  <view class="tab-bar-item" wx:for="{{list}}" wx:key="index" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <view class="icon-wrapper">
+      <!-- 我的习惯图标 -->
+      <block wx:if="{{index === 0}}">
+        <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="{{selected === index ? selectedColor : color}}"/>
+        </svg>
+      </block>
+      <!-- 习惯库图标 -->
+      <block wx:if="{{index === 1}}">
+        <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+          <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z" fill="{{selected === index ? selectedColor : color}}"/>
+        </svg>
+      </block>
+      <!-- 统计图标 -->
+      <block wx:if="{{index === 2}}">
+        <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" fill="{{selected === index ? selectedColor : color}}"/>
+        </svg>
+      </block>
+    </view>
+    <view class="tab-bar-item-text" style="color: {{selected === index ? selectedColor : color}}">
+      {{item.text}}
+    </view>
+  </view>
+</view> 

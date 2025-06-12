@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="stats-overview">
+    <view class="stat-card">
+      <text class="stat-value">{{completedHabits}}</text>
+      <text class="stat-label">养成习惯</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-value">{{totalCheckins}}</text>
+      <text class="stat-label">总打卡</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-value">{{maxStreak}}</text>
+      <text class="stat-label">最长连续</text>
+    </view>
+  </view>
+
+  <view class="stats-details">
+    <text class="section-title">统计详情</text>
+    <view class="habit-stats" wx:for="{{habits}}" wx:key="id">
+      <view class="habit-header">
+        <image class="habit-icon" src="{{item.icon}}" mode="aspectFit"></image>
+        <text class="habit-name">{{item.name}}</text>
+        <text class="habit-frequency">{{item.frequency}}</text>
+      </view>
+      
+      <view class="stats-row">
+        <view class="stat-item">
+          <text class="value">{{item.totalCheckins}}</text>
+          <text class="label">累积打卡</text>
+        </view>
+        <view class="stat-item">
+          <text class="value">{{item.currentStreak}}</text>
+          <text class="label">连续打卡</text>
+        </view>
+        <view class="stat-item">
+          <text class="value">{{item.completion}}%</text>
+          <text class="label">养成进度</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 

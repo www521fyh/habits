@@ -1,0 +1,249 @@
+.container {
+  padding: 20rpx;
+  background-color: #F8F7FF;
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, #7B66FF, #9785FF);
+  padding: 30rpx;
+  border-radius: 20rpx;
+  color: white;
+  margin-bottom: 30rpx;
+}
+
+.date {
+  margin-bottom: 20rpx;
+}
+
+.day {
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+
+.weekday {
+  font-size: 32rpx;
+}
+
+.progress {
+  font-size: 28rpx;
+  opacity: 0.9;
+}
+
+.habits-list {
+  margin-top: 30rpx;
+}
+
+.habit-item {
+  background: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.habit-content {
+  display: flex;
+  align-items: center;
+}
+
+.habit-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+
+.habit-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.habit-name {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-bottom: 10rpx;
+}
+
+.habit-frequency {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.progress-text {
+  margin-left: 20rpx;
+  color: #7B66FF;
+}
+
+.checkbox {
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx solid #7B66FF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox.checked {
+  background: #7B66FF;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: #7B66FF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 60rpx;
+  box-shadow: 0 4rpx 20rpx rgba(123, 102, 255, 0.3);
+}
+
+/* 对话框样式 */
+.dialog-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.dialog-content {
+  width: 600rpx;
+  background: white;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.dialog-header {
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+}
+
+.dialog-title {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.dialog-close {
+  font-size: 40rpx;
+  color: #999;
+  padding: 0 20rpx;
+}
+
+.dialog-body {
+  padding: 30rpx;
+}
+
+.habit-input {
+  width: 100%;
+  height: 80rpx;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+}
+
+.frequency-section {
+  margin-bottom: 30rpx;
+}
+
+.section-label {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.frequency-options {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.frequency-btn {
+  flex: 1;
+  height: 80rpx;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.frequency-btn.active {
+  background: #7B66FF;
+  color: white;
+  border-color: #7B66FF;
+}
+
+.times-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+
+.time-btn {
+  width: 80rpx;
+  height: 80rpx;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.time-btn.active {
+  background: #7B66FF;
+  color: white;
+  border-color: #7B66FF;
+}
+
+.dialog-footer {
+  padding: 20rpx;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20rpx;
+  border-top: 1rpx solid #eee;
+}
+
+.btn-cancel, .btn-confirm {
+  width: 160rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+}
+
+.btn-cancel {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.btn-confirm {
+  background: #7B66FF;
+  color: white;
+} 

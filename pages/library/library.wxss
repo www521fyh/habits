@@ -1,0 +1,68 @@
+.container {
+  padding: 20rpx;
+  background-color: #F8F7FF;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 30rpx 0;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #7B66FF;
+}
+
+.habit-list {
+  margin-top: 20rpx;
+}
+
+.habit-item {
+  background: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.habit-info {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.habit-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+
+.habit-name {
+  font-size: 32rpx;
+}
+
+.frequency {
+  font-size: 24rpx;
+  color: #999;
+  margin-right: 20rpx;
+}
+
+.add-btn {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background: #7B66FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32rpx;
+}
+
+.add-btn.added {
+  background: #E8E8E8;
+  color: #7B66FF;
+} 
